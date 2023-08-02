@@ -10,7 +10,7 @@ Gold and black [i3] rice.
 ---------------------------------
 
 Wallpapers and polybar
-![Wallpapers and polybar](https://github.com/WaldLumen/wald-gold/blob/main/screnshoots/1.png)
+![Wallpapers and polybar](https://github.com/WaldLumen/wald-gold/blob/main/screnshoots/1.jpg)
 Rofi
 ![Firefox start page and theme](https://github.com/WaldLumen/wald-gold/blob/main/screnshoots/rofi.png)
 

@@ -1,19 +1,15 @@
-; vim:ft=cfg
-; POLYBAR CONFIG
-
-
 [colors]
-background = ${xrdb:background:#222}
+background = #00000
 foreground = ${xrdb:foreground:#222}
 foreground-alt = ${xrdb:color7:#222}
 primary = ${xrdb:color13:#222}
 secondary = ${xrdb:color4:#222}
 alert = ${xrdb:color5:#222}
 
+underline = #E6BE8A
+
 
 [bar/base]
-monitor = ${env:MONITOR:HDMI-1}
-
 ; Dimensions
 width = 100%
 height = 30
@@ -30,14 +26,11 @@ bottom = false
 ; override-redirect = true
 
 ; Fonts
-font-0 = "FiraGO:size=11;2"
-font-1 = "Font Awesome 6 Free:style=Solid:pixelsize=12;2"
-font-2 = "Font Awesome 6 Free:style=Regular:pixelsize=12;2"
-font-3 = "Font Awesome 6 Brands:pixelsize=12;2"
-font-4 = "Material Design Icons:pixelsize=13;3"
-font-5 = "FiraCode Nerd Font:pixelsize=13;3"
-font-6 = "JoyPixels:scale=10:pixelsize=11;3"
-font-7 = "cryptofont:pixelsize=12;3"
+font-0 = JetBrains Mono Nerd Font:pixelsize=9;2
+font-1 = JetBrains Mono Nerd Font:pixelsize=12;3
+font-2 = JetBrains Mono Nerd Font:pixelsize=10:antialias=false;3
+font-3 = JetBrains Mono Nerd Font:pixelsize=14;3
+
 
 ; Colors
 background = ${colors.background}
@@ -73,20 +66,10 @@ blacklist-1 = scroll lock
 
 label-layout = %{T3}%{T-} %layout%
 
-
-[module/spotify]
-type = custom/script
-interval = 1
-format = <label>
-exec = python ~/bin/polybar-spotify/spotify_status.py -p ',' -f '{play_pause} {song} - {artist}'
-;control players (optional)
-click-left = playerctl --player=spotify play-pause &
-click-right = playerctl --player=spotify next &
-click-middle = playerctl --player=spotify previous &
-
-
 [module/i3]
+; General.
 type = internal/i3
+
 
 ws-icon-0 = 1;%{T0}%{T-}
 ws-icon-1 = 2;%{T4}%{T-}
@@ -98,30 +81,27 @@ ws-icon-6 = 7;%{T5}%{T-}
 ws-icon-7 = 8;%{T0}%{T-}
 ws-icon-8 = 9;%{T0}%{T-}
 ws-icon-9 = 10;%{T4}%{T-}
-pin-workspaces = true
-enable-scroll = true
 
-format = <label-state> <label-mode>
-
-label-mode = %mode%
-label-mode-padding = 1
-label-mode-background = ${colors.secondary}
-
+index-sort = true
+; Focused.
 label-focused = %icon%
-label-focused-foreground = ${colors.primary}
+label-focused-foreground = ${colors.underline}
 label-focused-padding = 1
-
-label-unfocused = %icon%
-label-unfocused-padding = 1
-
+; Visible.
 label-visible = %icon%
-label-visible-foreground = ${colors.primary}
 label-visible-padding = 1
-
+label-visible-background = ${colors.background-alt}
+label-visible-foreground = ${colors.foreground}
+; Urgent.
 label-urgent = %icon%
-label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
-
+label-urgent-background = ${colors.orange}
+label-urgent-foreground = ${colors.foreground}
+; Empty.
+label-unfocused = "%icon%"
+label-unfocused-padding = 1
+label-unfocused-foreground = ${colors.blue1}
+label-unfocused-background= ${colors.background-alt}
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -129,11 +109,11 @@ type = internal/pulseaudio
 format-volume = %{A3:pavucontrol &:}%{T6}<ramp-volume>%{T-} <label-volume>%{A}
 use-ui-max = true
 
-label-muted = %{A3:pavucontrol &:}%{T5}婢%{T-}%{A}
+label-muted = %{A3:pavucontrol &:}%{T5}󰝟%{T-}%{A}
 
-ramp-volume-0 = 奄
-ramp-volume-1 = 奔
-ramp-volume-2 = 墳
+ramp-volume-0 = 󰕾
+ramp-volume-1 = 󰕾
+ramp-volume-2 = 󰕾
 
 
 [module/date]

@@ -2,16 +2,7 @@ set $mod Mod4
 
 font JetBrainsMonoMedium Nerd 
 
-# Bluetooth
-
-exec_always --no-startup-id emacs 
-
-#ClipIt
-
-exec_always --no-startup-id clipit
-
 #KeePass
-exec_always --no-startup-id keepassxc
 
 #Flameshot
 exec_always --no-startup-id flameshot

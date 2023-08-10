@@ -26,7 +26,7 @@ sudo pacman -S alacritty polybar rofi python-pywal ttf-jetbrains-mono alsa-utils
 Installing
 ```
 git clone https://github.com/WaldLumen/wald-gold.git $HOME/Downloads/wald-gold
-cp -r $HOME/Downloads/wald-purple/wald-gold/* $HOME/.config 
+cp -r $HOME/Downloads/wald-gold/wald-gold/* $HOME/.config 
 ```
 ---------------------------------
 
